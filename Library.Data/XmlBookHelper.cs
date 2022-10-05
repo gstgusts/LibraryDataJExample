@@ -11,9 +11,9 @@ namespace Library.Data
     internal class XmlBookHelper
     {
 
-        internal static List<Book> Load()
+        internal static List<Book> Load(string url = @"books.xml")
         {
-            var bookElements = XElement.Load(@"books.xml").Elements("book");
+            var bookElements = XElement.Load(url).Elements("book");
 
             return bookElements.Select(x => new Book
             {
@@ -27,10 +27,7 @@ namespace Library.Data
 
         internal static Author[] GetAuthors(IEnumerable<XElement> authors)
         {
-            return authors.Select(a => new Author(nickName:"")
-            {
-                Name = a.Value
-            }).ToArray();
+            return authors.Select(a => new Author(a.Value, "")).ToArray();
         }
     }
 }
