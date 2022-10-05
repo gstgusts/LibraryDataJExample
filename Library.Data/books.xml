@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<books>
+	<book>
+		<title>5 little ducks</title>
+		<description>Went swimming</description>
+		<authors>
+			<author>Mama duck</author>
+		</authors>
+		<keywords>
+			<keyword>Children</keyword>
+			<keyword>Food</keyword>
+		</keywords>
+	</book>
+	<book>
+		<title>Ants</title>
+		<description>Go marching</description>
+		<authors>
+			<author>Ant 1</author>
+			<author>Ant 2</author>
+		</authors>
+		<keywords>
+			<keyword>Children</keyword>
+			<keyword>Animals</keyword>
+		</keywords>
+	</book>
+</books>
