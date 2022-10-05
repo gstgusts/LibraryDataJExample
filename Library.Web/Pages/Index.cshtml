@@ -18,3 +18,14 @@
     </div>
   </div>
 </form>
+
+@foreach (var book in Model.Books)
+{
+    <p><h2>@book.Title</h2><br>
+    <h5>@book.Description</h5>   
+    @foreach (var author in book.Authors)
+        {
+            <h6>@author.Name</h6>
+        }
+    </p>
+}

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Library.Data;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Library.Web.Pages
@@ -6,6 +7,8 @@ namespace Library.Web.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+
+        public IEnumerable<Book> Books { get; set; } = Enumerable.Empty<Book>();
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -21,7 +24,7 @@ namespace Library.Web.Pages
         {
             var query = Request.Form["searchQuery"].ToString();
 
-            var result = Program.Library.SearchByTitle(query);
+            Books = Program.Library.SearchByTitle(query);
         }
     }
 }
