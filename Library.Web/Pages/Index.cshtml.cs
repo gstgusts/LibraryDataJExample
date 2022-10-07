@@ -23,8 +23,19 @@ namespace Library.Web.Pages
         public void OnPost()
         {
             var query = Request.Form["searchQuery"].ToString();
+            var searchType = Request.Form["searchType"].ToString();
 
-            Books = Program.Library.SearchByTitle(query);
+            if(searchType == "T")
+            {
+                Books = Program.Library.SearchByTitle(query);
+            } else if (searchType == "D")
+            {
+                Books = Program.Library.SearchByDescription(query);
+            } else
+            {
+                throw new ArgumentException("No such search type", "searchType");
+            }
+
         }
     }
 }

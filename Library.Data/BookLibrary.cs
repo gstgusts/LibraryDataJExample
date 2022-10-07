@@ -36,6 +36,15 @@ namespace Library.Data
         {
             return _books.Where(b => b.Title.Contains(query, StringComparison.InvariantCultureIgnoreCase));
         }
+        public IEnumerable<Book> SearchByGenre(string query)
+        {
+            return _books.Where(b => b.Genre.ToString().Contains(query, StringComparison.InvariantCultureIgnoreCase));
+        }
+
+        public IEnumerable<Book> SearchByDescription(string query)
+        {
+            return _books.Where(b => b.Description.Contains(query, StringComparison.InvariantCultureIgnoreCase));
+        }
 
         private void Load()
         {

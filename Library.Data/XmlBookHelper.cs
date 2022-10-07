@@ -19,6 +19,7 @@ namespace Library.Data
             {
                 Title = x.Element("title").Value,
                 Description = x.Element("description").Value,
+                Genre = Enum.Parse<GenreEnum>(x.Element("genre").Value, true),
                 Authors = GetAuthors(x.Descendants("author")),
                 Keywords = x.Descendants("keyword").Select(k => k.Value).ToArray()
             }).ToList();

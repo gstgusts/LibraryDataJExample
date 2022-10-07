@@ -10,6 +10,9 @@
 			<keyword>Children</keyword>
 			<keyword>Food</keyword>
 		</keywords>
+		<genre>
+			Fantasy
+		</genre>
 	</book>
 	<book>
 		<title>Ants</title>
@@ -22,6 +25,9 @@
 			<keyword>Children</keyword>
 			<keyword>Animals</keyword>
 		</keywords>
+		<genre>
+			Horror
+		</genre>
 	</book>
 	<book>
 		<title>Ants 2</title>
@@ -34,5 +40,8 @@
 			<keyword>Children</keyword>
 			<keyword>Animals</keyword>
 		</keywords>
+		<genre>
+			Horror
+		</genre>
 	</book>
 </books>
