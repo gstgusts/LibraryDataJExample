@@ -10,6 +10,8 @@ namespace Library.Web.Pages
 
         public IEnumerable<Book> Books { get; set; } = Enumerable.Empty<Book>();
 
+        public string SearchType { get; set; } = "T";
+
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
