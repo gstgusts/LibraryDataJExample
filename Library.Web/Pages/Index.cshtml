@@ -11,19 +11,19 @@
 <form method="post">
     <div class="mb-3 row">
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="searchType" id="flexRadioDefault1" checked value="T">
+            <input onclick="selectSearchType(this)" class="form-check-input" type="radio" name="searchType" id="flexRadioDefault1" checked value="T">
             <label class="form-check-label" for="flexRadioDefault1">
                 Title
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="searchType" id="flexRadioDefault2" value="D">
+            <input onclick="selectSearchType(this)" class="form-check-input" type="radio" name="searchType" id="flexRadioDefault2" value="D">
             <label class="form-check-label" for="flexRadioDefault2">
                 Description
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="searchType" id="flexRadioDefault3" value="G">
+            <input onclick="selectSearchType(this)" class="form-check-input" type="radio" name="searchType" id="flexRadioDefault3" value="G">
             <label class="form-check-label" for="flexRadioDefault3">
                 Genre
             </label>
@@ -58,8 +58,6 @@
             <button type="submit" class="btn btn-primary">Search</button>
         </div>
     </div>
-
-
 </form>
 
 @foreach (var book in Model.Books)
