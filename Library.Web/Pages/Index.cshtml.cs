@@ -12,6 +12,10 @@ namespace Library.Web.Pages
 
         public string SearchType { get; set; } = "T";
 
+        public string SelectedGenre { get; set; } = string.Empty;
+
+        public string SearchQuery { get; set; } = string.Empty;
+
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
@@ -27,8 +31,11 @@ namespace Library.Web.Pages
             var query = Request.Form["searchQuery"].ToString();
             var searchType = Request.Form["searchType"].ToString();
             var serchTypeSelected = Request.Form["searchTypeSelected"].ToString();
+            var searchGenre = Request.Form["searchGenre"].ToString();
 
             SearchType = searchType;
+            SelectedGenre = searchGenre;
+            SearchQuery = query;
 
             if(!string.IsNullOrEmpty(serchTypeSelected))
             {
@@ -43,7 +50,8 @@ namespace Library.Web.Pages
                 Books = Program.Library.SearchByDescription(query);
             } else if(searchType == "G")
             {
-                Books = Program.Library.SearchByGenre(query);
+                var genre = (GenreEnum)Enum.Parse(typeof(GenreEnum), searchGenre);
+                Books = Program.Library.SearchByGenre(genre);
             } 
             else
             {

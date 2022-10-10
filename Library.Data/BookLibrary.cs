@@ -36,9 +36,9 @@ namespace Library.Data
         {
             return _books.Where(b => b.Title.Contains(query, StringComparison.InvariantCultureIgnoreCase));
         }
-        public IEnumerable<Book> SearchByGenre(string query)
+        public IEnumerable<Book> SearchByGenre(GenreEnum genre)
         {
-            return _books.Where(b => b.Genre.ToString().Contains(query, StringComparison.InvariantCultureIgnoreCase));
+            return _books.Where(b => b.Genre == genre);
         }
 
         public IEnumerable<Book> SearchByDescription(string query)
