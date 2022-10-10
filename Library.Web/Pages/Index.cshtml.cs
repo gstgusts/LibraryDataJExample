@@ -26,6 +26,14 @@ namespace Library.Web.Pages
         {
             var query = Request.Form["searchQuery"].ToString();
             var searchType = Request.Form["searchType"].ToString();
+            var serchTypeSelected = Request.Form["searchTypeSelected"].ToString();
+
+            SearchType = searchType;
+
+            if(!string.IsNullOrEmpty(serchTypeSelected))
+            {
+                return;
+            }
 
             if(searchType == "T")
             {
@@ -33,7 +41,11 @@ namespace Library.Web.Pages
             } else if (searchType == "D")
             {
                 Books = Program.Library.SearchByDescription(query);
-            } else
+            } else if(searchType == "G")
+            {
+                Books = Program.Library.SearchByGenre(query);
+            } 
+            else
             {
                 throw new ArgumentException("No such search type", "searchType");
             }
