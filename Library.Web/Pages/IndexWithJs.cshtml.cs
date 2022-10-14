@@ -7,6 +7,12 @@ namespace Library.Web.Pages
     {
         private readonly ILogger<PrivacyModel> _logger;
 
+        public string SearchType { get; set; } = "T";
+
+        public string SelectedGenre { get; set; }
+
+        public string SearchQuery { get; set; }
+
         public PrivacyModel(ILogger<PrivacyModel> logger)
         {
             _logger = logger;

@@ -10,3 +10,18 @@
 
     form.submit();
 }
+
+function changeSearchForm(searchType) {
+    // console.log(searchType.value);
+
+    const searchQuery = document.getElementById('searchQuery');
+    const searchGenreContainer = document.getElementById('searchGenreContainer');
+
+    if (searchType.value === 'T' || searchType.value === 'D') {
+        searchQuery.style.display = 'block';
+        searchGenreContainer.style.display = 'none';
+    } else {
+        searchQuery.style.display = 'none';
+        searchGenreContainer.style.display = 'block';
+    }
+}
