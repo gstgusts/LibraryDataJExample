@@ -1,4 +1,6 @@
 ﻿using Library.Data;
+using Library.Web.Helpers;
+using Library.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -26,12 +28,14 @@ namespace Library.Web.Pages
             var a = "";
         }
 
-        public void OnPost()
+        public void OnPost(SearchModel model)
         {
             var query = Request.Form["searchQuery"].ToString();
             var searchType = Request.Form["searchType"].ToString();
             var serchTypeSelected = Request.Form["searchTypeSelected"].ToString();
             var searchGenre = Request.Form["searchGenre"].ToString();
+
+            //query.GetRandomText(5);
 
             SearchType = searchType;
             SelectedGenre = searchGenre;

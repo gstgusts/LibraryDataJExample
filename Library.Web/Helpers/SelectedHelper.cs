@@ -9,5 +9,10 @@ namespace Library.Web.Helpers
             return option.Equals(selectedOption, StringComparison.InvariantCultureIgnoreCase)
                 ? "selected" : string.Empty;
         }
+
+        public static string GetRandomText(this string s, int length)
+        {
+            return string.Empty;
+        }
     }
 }
